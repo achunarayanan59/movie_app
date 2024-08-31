@@ -1,0 +1,33 @@
+{%include 'index.html'%}
+
+<div class="container mt-5">
+    <h2 class="mb-4">Movie List</h2>
+    <table class="table table-striped table-bordered">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Title</th>
+                <th scope="col">Release Year</th>
+                <th scope="col">Description</th>
+                <th scope="col">Edit</th>
+                <th scope="col">Delete</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            {%for movie_obj in view_movies%}
+            <tr>
+                <td>{{movie_obj.title}}</td>
+                <td>{{movie_obj.year}}</td>
+                <td>{{movie_obj.desc}}</td>
+                <td>
+                    <a class="btn btn-warning btn-sm" href="{%url 'edit' movie_obj.id%}">Edit</a>
+                </td>
+                <td>
+                    <a class="btn btn-danger btn-sm" href="{%url 'delete' movie_obj.id%}">Delete</a> 
+                </td>
+            </tr>
+            {%endfor%}
+        </tbody>
+    </table>
+</div>
+

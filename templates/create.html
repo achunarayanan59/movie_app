@@ -1,0 +1,22 @@
+{%include 'index.html'%}
+
+
+<div class="container mt-5">
+    <h2 class="mb-4">Add a New Movie</h2>
+    <form method="post" enctype="multipart/form-data">
+        {%csrf_token%}
+    <div class="form-group">
+        <label for="movieTitle">Movie Title</label>
+        <input name="title" type="text" class="form-control" id="movieTitle" placeholder="Enter movie title" required>
+    </div>     
+        <div class="form-group">
+            <label for="releaseYear">Movie Release Year</label>
+            <input name="year" type="number" class="form-control" id="releaseYear" placeholder="Enter release year" required>
+        </div>
+        <div class="form-group">
+            <label for="description">Movie Description</label>
+            <textarea name="desc" class="form-control" id="description" rows="3" placeholder="Enter movie description" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
